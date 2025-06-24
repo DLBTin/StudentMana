@@ -1,0 +1,51 @@
+﻿<Window x:Class="Project.InstructorReportViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Instructor Report" Width="900" Height="600">
+    <Grid>
+        <FlowDocumentScrollViewer x:Name="ReportViewer" VerticalScrollBarVisibility="Auto">
+            <FlowDocument x:Name="InstructorReportDoc">
+                <Paragraph FontSize="20" FontWeight="Bold" TextAlignment="Center">
+                    Instructor Report
+                </Paragraph>
+                <Paragraph FontSize="14" TextAlignment="Center">
+                    Period:
+                    <Run x:Name="ReportPeriodRun" />
+                </Paragraph>
+                <Paragraph FontSize="12" TextAlignment="Left" FontStyle="Italic">
+                    Generated on:
+                    <Run x:Name="GeneratedOnRun" />
+                </Paragraph>
+                <Table x:Name="InstructorReportTable">
+                    <Table.Columns>
+                        <TableColumn Width="*"/>
+                        <TableColumn Width="*"/>
+                        <TableColumn Width="*"/>
+                        <TableColumn Width="*"/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow Background="LightGray">
+                            <TableCell>
+                                <Paragraph>Instructor ID</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Name</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Email</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Total Courses</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <!-- Rows added dynamically -->
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>

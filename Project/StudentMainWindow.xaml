@@ -1,0 +1,27 @@
+﻿<Window x:Class="Project.StudentMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Student Main" Width="800" Height="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="My Enrolled Courses" FontSize="18" FontWeight="Bold" />
+            <DataGrid Name="EnrolledCoursesGrid" AutoGenerateColumns="False" Margin="0,10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Course Name" Binding="{Binding Course.Name}" />
+                    <DataGridTextColumn Header="Instructor" Binding="{Binding Course.Instructor.User.FullName}" />
+                    <DataGridTextColumn Header="Credits" Binding="{Binding Course.Credits}" />
+                    <DataGridTextColumn Header="Enrollment Date" Binding="{Binding EnrollmentDate}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
+                <Button Name="EnrollButton" Content="Enroll New Course" Click="EnrollButton_Click" Margin="5"/>
+                <Button Name="LogoutButton" Content="Logout" Click="LogoutButton_Click" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
